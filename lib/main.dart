@@ -39,8 +39,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   FetchJSON() async {
+    //please enter you own api-key
     var Response = await http.get(
-        "https://newsapi.org/v2/top-headlines?sources=google-news,wired,the-washington-times&apiKey=931fc8dd717f4bc4a4219938f03a3273");
+        "https://newsapi.org/v2/top-headlines?sources=google-news,wired,the-washington-times&apiKey=API-key-here");
 
     if (Response.statusCode == 200) {
       String responseBody = Response.body;
@@ -64,6 +65,7 @@ class _MyAppState extends State<MyApp> {
       setState(() {});
     } else {
       print('Something went wrong. \nResponse Code : ${Response.statusCode}');
+      print('check whether the api-key is correct or not');
     }
   }
 
